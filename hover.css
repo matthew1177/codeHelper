@@ -1,0 +1,52 @@
+.button {
+    position:absolute;
+    width:1005px;
+    height:234.25px;
+    top:78%;
+    left:20%;
+    color: #ffffff;
+    background-color:transparent; 
+    border: transparent;
+    z-index: 10;
+  }
+  .button::before,
+  .button::after {
+    --scale: 0;
+    --arrow-size: 20px;
+    --tooltip-color: gray;
+  
+    position: absolute;
+    top: -.25rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+    transition: 200ms transform;
+    transform-origin: bottom center;
+  }
+  
+  .button::before {
+    --translate-y: calc(-100% - var(--arrow-size));
+  
+    content: attr(data-tooltip);
+    color: white;
+    padding: .5rem;
+    border-radius: .3rem;
+    border-color: red;
+    text-align: center;
+    width: max-content;
+    max-width: 100%;
+    background: var(--tooltip-color);
+  }
+  
+  .button:hover::before,
+  .button:hover::after {
+    --scale: 1;
+  }
+  
+  .button::after {
+    --translate-y: calc(-1 * var(--arrow-size));
+  
+    content: '';
+    border: var(--arrow-size) solid transparent;
+    border-top-color: var(--tooltip-color);
+    transform-origin: top center;
+  }
