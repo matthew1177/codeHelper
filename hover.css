@@ -13,11 +13,11 @@
   .button::after {
     --scale: 0;
     --arrow-size: 20px;
-    --tooltip-color: gray;
+    --tooltip-color: #1771b3;
   
     position: absolute;
     top: -.25rem;
-    left: 50%;
+    left: 71%;
     transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
     transition: 200ms transform;
     transform-origin: bottom center;

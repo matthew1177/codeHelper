@@ -8,7 +8,7 @@ startButton.className = "button"
 
 var spanInStart = document.createElement('span')
 spanInStart.classList.add('beforestartbuttnon')
-spanInStart.innerHTML = "What's cookin', good lookin'?"
+spanInStart.innerHTML = "Everything looks good!"
 //startButton.tooltiptext = "Hello";
 
 startButton.appendChild(spanInStart)
