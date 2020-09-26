@@ -9,7 +9,7 @@
     border: transparent;
     z-index: 10;
   }
-  .button::before,
+  .beforestartbuttnon,
   .button::after {
     --scale: 0;
     --arrow-size: 20px;
@@ -23,7 +23,7 @@
     transform-origin: bottom center;
   }
   
-  .button::before {
+  .beforestartbuttnon {
     --translate-y: calc(-100% - var(--arrow-size));
   
     content: attr(data-tooltip);
@@ -37,7 +37,7 @@
     background: var(--tooltip-color);
   }
   
-  .button:hover::before,
+  .button:hover .beforestartbuttnon,
   .button:hover::after {
     --scale: 1;
   }

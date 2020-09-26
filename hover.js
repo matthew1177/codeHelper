@@ -6,14 +6,24 @@ var startButton = document.createElement('div');
 startButton.id = "startButton";
 startButton.className = "button"
 
+var spanInStart = document.createElement('span')
+spanInStart.classList.add('beforestartbuttnon')
+spanInStart.innerHTML = "What's cookin', good lookin'?"
 //startButton.tooltiptext = "Hello";
 
-startButton.setAttribute('data-tooltip', "What's cookin', good lookin'?")
+startButton.appendChild(spanInStart)
 
 createStartButton();
 
 function createStartButton(){
   document.body.appendChild(startButton);
+}
+
+function linkify(text) {
+  var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+  return text.replace(urlRegex, function(url) {
+      return '<a target="_blank" href="' + url + '">' + url + '</a>';
+  });
 }
 
 function hover()
@@ -28,7 +38,7 @@ function hover()
         getErrorByName(newErrMsg.join('')).then((obj) => {
           let strval = obj.fields.response.stringValue
           console.log(strval) // TODO
-          startButton.setAttribute('data-tooltip', "Try this: " + strval)
+          spanInStart.innerHTML = "Try this: " + linkify(strval)
         });
       
       //console.log(text.replace(arr[i], /[a-zA-Z]+(?=[^‘’'"“”:]*(?:[:‘’'"“”][^:‘’'"“”]*[‘:’'"“”][^‘:’'"“”]*)*$)/g ));
