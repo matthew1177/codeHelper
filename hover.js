@@ -2,6 +2,10 @@
 var width = document.getElementById("interactive-terminal-container").offsetWidth;
 console.log(width);
 
+if (document.getElementById('startButton')) {
+  document.getElementById('startButton').parentElement.removeChild(document.getElementById('startButton'))
+}
+
 var startButton = document.createElement('div');
 startButton.id = "startButton";
 startButton.className = "button"
