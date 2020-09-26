@@ -41,3 +41,8 @@ function hover()
 
 hover();
 
+async function getErrorByName (name) {
+  let resp =  await fetch('https://firestore.googleapis.com/v1/projects/errors-61ec7/databases/(default)/documents/C%2b%2b/'+name)
+  resp = await resp.json()
+  return resp
+}
