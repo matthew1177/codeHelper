@@ -6,7 +6,7 @@ var startButton = document.createElement('div');
 startButton.id = "startButton";
 startButton.className = "button"
 
-startButton.tooltiptext = "Hello";
+//startButton.tooltiptext = "Hello";
 
 startButton.setAttribute('data-tooltip', 'test123123')
 
@@ -28,11 +28,9 @@ function hover()
         getErrorByName(newErrMsg.join('')).then((obj) => {
           let strval = obj.fields.response.stringValue
           console.log(strval) // TODO
+          startButton.setAttribute('data-tooltip', "Try this: " + strval)
         });
       
-      
-      
-
       //console.log(text.replace(arr[i], /[a-zA-Z]+(?=[^‘’'"“”:]*(?:[:‘’'"“”][^:‘’'"“”]*[‘:’'"“”][^‘:’'"“”]*)*$)/g ));
       //console.log(arr[i]);
       //console.log(new);
