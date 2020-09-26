@@ -1,8 +1,4 @@
 .button {
-    position:absolute;
-    width:100vh;
-    height:234.25px;
-    top:78%;
     background-color:transparent; 
     border: transparent;
     z-index: 10;
@@ -17,9 +13,9 @@
   
     position: absolute;
     top: -.25rem;
-    left: 71%;
+    left: 50%;
     transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
-    transition: 200ms transform;
+    transition: 600ms transform;
     transform-origin: bottom center;
   }
   
