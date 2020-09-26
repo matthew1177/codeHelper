@@ -8,7 +8,7 @@ startButton.className = "button"
 
 //startButton.tooltiptext = "Hello";
 
-startButton.setAttribute('data-tooltip', 'test123123')
+startButton.setAttribute('data-tooltip', "What's cookin', good lookin'?")
 
 createStartButton();
 
