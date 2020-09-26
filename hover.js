@@ -2,10 +2,9 @@
 var width = document.getElementById("interactive-terminal-container").offsetWidth;
 console.log(width);
 
-var startButton = document.createElement('button');
+var startButton = document.createElement('div');
 startButton.id = "startButton";
 startButton.className = "button"
-
 
 startButton.tooltiptext = "Hello";
 
