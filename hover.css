@@ -1,20 +1,20 @@
 .button {
     position:absolute;
-    width:1005px;
+    width:100vh;
     height:234.25px;
     top:78%;
-    left:20%;
-    color: #ffffff;
     background-color:transparent; 
     border: transparent;
     z-index: 10;
+    overflow: initial !important;
+    pointer-events: all;
   }
   .beforestartbuttnon,
   .button::after {
     --scale: 0;
     --arrow-size: 20px;
     --tooltip-color: gray;
-  
+    color: #ffffff;
     position: absolute;
     top: -.25rem;
     left: 50%;
@@ -44,7 +44,7 @@
   
   .button::after {
     --translate-y: calc(-1 * var(--arrow-size));
-  
+    color: #ffffff;
     content: '';
     border: var(--arrow-size) solid transparent;
     border-top-color: var(--tooltip-color);

@@ -5,19 +5,24 @@ console.log(width);
 if (document.getElementById('startButton')) {
   document.getElementById('startButton').parentElement.removeChild(document.getElementById('startButton'))
 }
-
+/*
 var startButton = document.createElement('div');
 startButton.id = "startButton";
 startButton.className = "button"
+*/
+var startButton = document.getElementById('bottom-component')
+startButton.className = ("button")
+startButton.classList.add('split-pane-component')
 
 var spanInStart = document.createElement('span')
 spanInStart.classList.add('beforestartbuttnon')
 spanInStart.innerHTML = "What's cookin', good lookin'?"
 //startButton.tooltiptext = "Hello";
 
+//startButton.innerHTML = ''
 startButton.appendChild(spanInStart)
 
-createStartButton();
+//createStartButton();
 
 function createStartButton(){
   document.body.appendChild(startButton);
