@@ -18,18 +18,39 @@ function createStartButton(){
 
 function hover()
 {
+  var arr = document.getElementsByClassName('error_line');
+  for(i = 0; i < arr.length; i++){
+      var errMsg = arr[i].parentElement.textContent;
+      console.log(errMsg);
+      
+      var newErrMsg = errMsg.match( /[a-zA-Z]+(?=[^‘’”:]*(?:[:‘’'"“”][^:‘’'"“”]*[‘:’'"“”][^‘:’'"“”]*)*$)/g );
+        console.log(newErrMsg.join(''));    
+        getErrorByName(newErrMsg.join('')).then((obj) => {
+          let strval = obj.fields.response.stringValue
+          console.log(strval) // TODO
+        });
+      
+      
+      
+
+      //console.log(text.replace(arr[i], /[a-zA-Z]+(?=[^‘’'"“”:]*(?:[:‘’'"“”][^:‘’'"“”]*[‘:’'"“”][^‘:’'"“”]*)*$)/g ));
+      //console.log(arr[i]);
+      //console.log(new);
+      //array.join('')
+    //var outputBox = document.getElementById("interactive-terminal-container");
     startButton.onmouseover = function() {mouseover()};
 
     startButton.onmouseover = function() {
-
+      
+      }
         //alert("I am an alert box!");
         console.log("yes");
       }
       startButton.onmouseout = function() {
 
       }
+       
 }
-
 hover();
 
 async function getErrorByName (name) {
