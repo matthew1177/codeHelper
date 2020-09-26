@@ -8,7 +8,7 @@ link.href = //'chrome-extension://immnleonmkkjkhjplihadojmpbgcpnlk/hover.css'//c
 //console.log(chrome.runtime.getURL('hover.css'));
 document.head.appendChild(link)
 */
-var startButton = document.createElement('button');
+var startButton = document.createElement('div');
 startButton.id = "startButton";
 startButton.className = "button"
 //startButton.style.cssText = "position:absolute;width:1005px;height:234.25px;top:78%;left:20%;color: #ffffff;background-color: red; border: transparent;"
