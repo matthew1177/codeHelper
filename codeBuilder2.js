@@ -33,9 +33,9 @@ var animate = function () {
 
 var startButton = document.createElement('button');
 startButton.id = "startButton";
-startButton.innerHTML = 'Start';
+startButton.innerHTML = 'highlightHelper';
 startButton.style.cssText += "font-family: 'Linux Libertine','Georgia','Times',serif;";
-startButton.style.cssText = "position:absolute;width:100px;height:30px;top:11.5%;left:50%;";
+startButton.style.cssText = "position:absolute;width:96px;height:46px;top:0.65%;left:56.5%; border:none; border-radius: 5px;";
 createStartButton();
 document.getElementById("startButton").addEventListener("click", start);
 
@@ -45,6 +45,8 @@ function createStartButton(){
 
 
 function start(){
+        //startButton.style.cssText = "visibility:'hidden'";
+
         var word = getSelectionText()
 
         getFunctionByName(word).then(obj => {
@@ -53,7 +55,6 @@ function start(){
             //document.body.appendChild( renderer.domElement );
             //scene.add( cube );
             //animate();
-            //spanInStart.innerHTML = "Try this: " + linkify(strval)
             createInfoButton(strval);
         })
     
@@ -66,9 +67,13 @@ function createInfoButton(str)
     info.id = "infoButton";
     info.innerHTML = str;
     info.style.cssText += "font-family: 'Linux Libertine','Georgia','Times',serif;";
-    info.style.cssText = "position:absolute;width:fit-content;height:fit-content;top:11.5%;left:50%;text-align:left";
+    info.style.cssText = "position:absolute;width:fit-content;height:fit-content;top:11.5%;left:49%;text-align:left;padding:10px;border:none;font-size: 15px; border-radius: 5px;";
     document.body.appendChild(info);
+    document.getElementById("infoButton").addEventListener("click", function(){
+        info.style.cssText = "visibility: none;";
+    });
 }
+
 
 var render = function() {
     requestAnimationFrame(render);
