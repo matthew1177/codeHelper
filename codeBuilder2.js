@@ -73,7 +73,7 @@ function createInfoButton(str)
     info.id = "infoButton";
     info.innerHTML = linkify(str);
     info.style.cssText += "font-family: 'Linux Libertine','Georgia','Times',serif;";
-    info.style.cssText = "position:absolute;width:fit-content;height:fit-content;top:11.5%;left:49%;text-align:left;padding:10px;font-size: 15px; border-radius: 5px; background: #efefef;";
+    info.style.cssText = "position:absolute;width:fit-content;height:fit-content;top:90%;left:60%;text-align:left;padding:10px;font-size: 15px; border-radius: 5px; background: #efefef;";
     document.body.appendChild(info);
     document.getElementById("infoButton").addEventListener("click", function(){
         info.style.cssText = "visibility: none;";
