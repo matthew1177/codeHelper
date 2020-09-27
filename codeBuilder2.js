@@ -33,7 +33,7 @@ var animate = function () {
 
 var startButton = document.createElement('button');
 startButton.id = "startButton";
-startButton.innerHTML = 'highlightHelper';
+startButton.innerHTML = 'methodHelper';
 startButton.style.cssText += "font-family: 'Linux Libertine','Georgia','Times',serif;";
 startButton.style.cssText = "position:absolute;width:96px;height:46px;top:0.65%;left:56.5%; border:none; border-radius: 5px;";
 createStartButton();
@@ -60,14 +60,20 @@ function start(){
     
 }
 
+function linkify(text) {
+  var urlRegex =/(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+  return text.replace(urlRegex, function(url) {
+      return '<a target="_blank" href="' + url + '">' + url + '</a>';
+  });
+}
 
 function createInfoButton(str)
 {
-    var info = document.createElement('button');
+    var info = document.createElement('div');
     info.id = "infoButton";
-    info.innerHTML = str;
+    info.innerHTML = linkify(str);
     info.style.cssText += "font-family: 'Linux Libertine','Georgia','Times',serif;";
-    info.style.cssText = "position:absolute;width:fit-content;height:fit-content;top:11.5%;left:49%;text-align:left;padding:10px;border:none;font-size: 15px; border-radius: 5px;";
+    info.style.cssText = "position:absolute;width:fit-content;height:fit-content;top:11.5%;left:49%;text-align:left;padding:10px;border:none;font-size: 15px; border-radius: 5px; background: #ffffff;";
     document.body.appendChild(info);
     document.getElementById("infoButton").addEventListener("click", function(){
         info.style.cssText = "visibility: none;";
