@@ -4,6 +4,14 @@
 
 'use strict';
 
+/*function confirm(){
+  console.log("true");
+}
+chrome.contextMenus.removeAll()
+chrome.contextMenus.onClicked.addListener(function( ){confirm();})
+
+chrome.contextMenus.create({id: 'form',title: 'formatHelper',contexts: ['selection']})*/
+
 chrome.runtime.onInstalled.addListener(function() {
   chrome.storage.sync.set({color: '#3aa757'}, function() {
     console.log('The color is green.');
