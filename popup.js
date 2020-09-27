@@ -19,3 +19,18 @@ changeColor.onclick = function(element) {
 			});
 	});
 };
+
+let c2 = document.getElementById('c2');
+
+c2.onclick = function(element) {
+  let color = element.target.value;
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+    chrome.tabs.executeScript(
+        tabs[0].id,
+        {file: "hover.js"});
+    chrome.tabs.insertCSS(
+        tabs[0].id,
+        {file: "hover.css"});
+    
+  });
+};
